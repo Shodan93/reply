@@ -16,10 +16,10 @@
     :root {
       --ink-900:#161616; --ink-800:#242424; --ink-700:#3a3a3a; --ink-600:#5c5c5c; --ink-200:#dcdcdc; --ink-50:#f7f7f5;
       --paper:#fdfdfa; --white:#ffffff;
-      --violet-700:#4a30b0; --violet-500:#6c4ce0;
+      --teal-600:#028a6e; --teal-500:#00b894; --teal-300:#7fdcc7; --teal-100:#d6f5ee;
       --surface-page:var(--paper); --surface-sunken:var(--ink-50);
       --text-primary:var(--ink-900); --text-secondary:var(--ink-600); --text-on-accent:var(--white);
-      --accent-primary:var(--violet-500); --accent-primary-hover:var(--violet-700);
+      --accent-primary:var(--teal-600); --accent-primary-hover:var(--ink-900); /* accent = Design-System teal (closest to Reply green) */
       --border-subtle:var(--ink-200);
       --font-display:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;
       --font-body:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;
@@ -77,7 +77,7 @@
         <div style="{{ rightColStyle }}">
           <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" style="{{ videoCardStyle }}" data-name="video-card">
             <div style-hover="{{ playHoverStyle }}" style="{{ playIconStyle }}" aria-label="Play shop walkthrough">
-              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(108,76,224)"><path d="M8 5v14l11-7z"></path></svg>
+              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(2,138,110)"><path d="M8 5v14l11-7z"></path></svg>
             </div>
             <span style="{{ videoLabelStyle }}">SHOP WALKTHROUGH</span>
             <span style="{{ videoSubLabelStyle }}">Click to play — streams from Google Drive.</span>
@@ -172,6 +172,7 @@ class Component extends DCLogic {
     // Arclight Design System tokens (defined in the <helmet> :root block above)
     const strong = "var(--text-primary)";
     const muted = "var(--text-secondary)";
+    const bodyText = "var(--ink-700)";
     const accent = "var(--accent-primary)";
     const border = "var(--border-subtle)";
     const paper = "var(--surface-page)";
@@ -183,7 +184,7 @@ class Component extends DCLogic {
     const ls = "var(--ls-tight)";
     const lh = "var(--lh-tight)";
     const lsWide = "var(--ls-wide)";
-    const accentLine = "rgba(108,76,224,0.35)";
+    const accentLine = "rgba(2,138,110,0.35)";
     const paperA = (a) => "rgba(253,253,250," + a + ")";
 
     return {
@@ -265,7 +266,7 @@ class Component extends DCLogic {
       subtitle1Style: {
         fontFamily: archivo, fontWeight: 600,
         fontSize: m ? 15 : 20,
-        color: strong,
+        color: bodyText,
         margin: 0,
         maxWidth: m ? "100%" : 640,
       },
@@ -342,7 +343,7 @@ class Component extends DCLogic {
       bulletTextStyle1: {
         fontFamily: archivo, fontWeight: 400,
         fontSize: m ? 16 : 17,
-        lineHeight: 1.6, color: strong, flexGrow: 1, margin: 0,
+        lineHeight: 1.6, color: bodyText, flexGrow: 1, margin: 0,
       },
       qrCardStyle: {
         display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
@@ -485,7 +486,7 @@ class Component extends DCLogic {
       bulletRowStyle2: { display: "flex", flexDirection: "row", gap: 16, alignItems: "flex-start", width: "100%" },
       bulletTextStyle2: {
         fontFamily: archivo, fontWeight: 400, fontSize: m ? 17 : 21,
-        lineHeight: 1.6, color: strong, flexGrow: 1, margin: 0,
+        lineHeight: 1.6, color: bodyText, flexGrow: 1, margin: 0,
       },
       primaryBtnStyle: {
         display: "flex", alignItems: "center", justifyContent: "center",
@@ -518,7 +519,7 @@ class Component extends DCLogic {
       },
       footerPairStyle: { display: "flex", flexDirection: "column", gap: m ? 2 : 4 },
       footerLabelStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, color: muted, margin: 0 },
-      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, letterSpacing: ls, color: strong, margin: 0 },
+      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, letterSpacing: ls, color: bodyText, margin: 0 },
       copyrightStyle: { fontFamily: mono, fontWeight: 400, fontSize: m ? 12 : 15, color: muted, marginTop: -10 },
     };
   }
