@@ -26,6 +26,18 @@
       --font-body:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;
       --font-mono:'Space Mono','IBM Plex Mono',monospace;
       --lh-tight:1.02; --ls-tight:-0.02em; --ls-wide:0.08em;
+      /* Typography scale (desktop) */
+      --fs-hero-title:68px; --fs-hero-lead:18px; --fs-hero-text:17px;
+      --fs-label:13px; --fs-case-title:34px; --fs-case-sub:18px;
+      --fs-body:16px; --fs-bullet:16px; --fs-caption:14px; --fs-button:14px; --fs-link:14px;
+    }
+    /* Typography scale (mobile, same breakpoint as the page logic) */
+    @media (max-width: 859px) {
+      :root {
+        --fs-hero-title:44px; --fs-hero-lead:17px; --fs-hero-text:16px;
+        --fs-label:12px; --fs-case-title:30px; --fs-case-sub:17px;
+        --fs-body:16px; --fs-bullet:16px; --fs-caption:14px; --fs-button:14px; --fs-link:14px;
+      }
     }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--surface-page); }
@@ -248,7 +260,7 @@ class Component extends DCLogic {
       },
       eyebrowStyle: {
         fontFamily: mono, fontWeight: 400,
-        fontSize: m ? 12 : 14,
+        fontSize: "var(--fs-label)",
         letterSpacing: lsWide,
         lineHeight: 1.2,
         color: accent,
@@ -257,7 +269,7 @@ class Component extends DCLogic {
       },
       h1Style: {
         fontFamily: archivoNarrow, fontWeight: 700,
-        fontSize: m ? 44 : 68,
+        fontSize: "var(--fs-hero-title)",
         letterSpacing: ls,
         lineHeight: lh,
         color: strong,
@@ -266,14 +278,14 @@ class Component extends DCLogic {
       },
       subtitle1Style: {
         fontFamily: archivo, fontWeight: 600,
-        fontSize: m ? 15 : 20,
+        fontSize: "var(--fs-hero-lead)",
         color: bodyText,
         margin: 0,
         maxWidth: m ? "100%" : 640,
       },
       subtitle2Style: {
         fontFamily: archivo, fontWeight: 400,
-        fontSize: m ? 14 : 17,
+        fontSize: "var(--fs-hero-text)",
         lineHeight: 1.55,
         color: muted,
         margin: 0,
@@ -303,7 +315,7 @@ class Component extends DCLogic {
       eyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
       caseTitleStyle: {
         fontFamily: archivoNarrow, fontWeight: 700,
-        fontSize: m ? 28 : 40,
+        fontSize: "var(--fs-case-title)",
         letterSpacing: ls,
         lineHeight: lh,
         color: strong,
@@ -311,7 +323,7 @@ class Component extends DCLogic {
       },
       caseSubtitleStyle: {
         fontFamily: archivo, fontWeight: 400,
-        fontSize: m ? 15 : 19,
+        fontSize: "var(--fs-case-sub)",
         lineHeight: 1.55,
         color: muted,
         margin: 0,
@@ -343,7 +355,7 @@ class Component extends DCLogic {
       bulletDot: { width: 6, height: 6, borderRadius: "50%", backgroundColor: accent },
       bulletTextStyle1: {
         fontFamily: archivo, fontWeight: 400,
-        fontSize: m ? 16 : 17,
+        fontSize: "var(--fs-bullet)",
         lineHeight: 1.6, color: bodyText, flexGrow: 1, margin: 0,
       },
       qrCardStyle: {
@@ -355,7 +367,7 @@ class Component extends DCLogic {
       },
       qrImgStyle: { width: m ? 84 : 120, height: m ? 84 : 120, borderRadius: 4, objectFit: "contain", flexShrink: 0 },
       scanLabelStyle: {
-        fontFamily: mono, fontWeight: 400, fontSize: m ? 13 : 15,
+        fontFamily: mono, fontWeight: 400, fontSize: "var(--fs-label)",
         letterSpacing: lsWide, color: accent, whiteSpace: "nowrap", margin: 0,
       },
 
@@ -387,11 +399,11 @@ class Component extends DCLogic {
       playHoverStyle: { background: paperA(0.9) },
       playIconSvgSize: m ? 24 : 44,
       videoLabelStyle: {
-        fontFamily: inter, fontWeight: 500, fontSize: m ? 13 : 16,
+        fontFamily: inter, fontWeight: 500, fontSize: "var(--fs-button)",
         letterSpacing: m ? "0.03em" : "0.04em", color: strong, margin: 0,
       },
       videoSubLabelStyle: {
-        fontFamily: inter, fontWeight: 400, fontSize: m ? 12 : 14,
+        fontFamily: inter, fontWeight: 400, fontSize: "var(--fs-caption)",
         color: muted, textAlign: "center", margin: 0,
       },
       buttonRowStyle: { width: "100%" },
@@ -402,16 +414,16 @@ class Component extends DCLogic {
         display: "flex", flexDirection: "column", gap: 8, width: "100%",
       },
       linkLabelStyle: {
-        fontFamily: mono, fontWeight: 400, fontSize: m ? 13 : 15,
+        fontFamily: mono, fontWeight: 400, fontSize: "var(--fs-label)",
         letterSpacing: lsWide, color: accent, margin: 0,
       },
       urlRowStyle: { display: "flex", flexDirection: "row", gap: 10, alignItems: "center", width: "100%" },
       urlTextStyle: {
-        fontFamily: mono, fontWeight: 400, fontSize: m ? 12 : 14,
+        fontFamily: mono, fontWeight: 400, fontSize: "var(--fs-link)",
         color: muted, flexGrow: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis",
       },
       copyIconStyle: {
-        fontFamily: inter, fontSize: 14, color: accent, background: "none",
+        fontFamily: inter, fontSize: "var(--fs-link)", color: accent, background: "none",
         border: "none", cursor: "pointer", flexShrink: 0, padding: 4,
       },
       copyHoverStyle: { opacity: 0.7 },
@@ -428,7 +440,7 @@ class Component extends DCLogic {
       },
       case2EyebrowStyle: {
         fontFamily: mono, fontWeight: 400,
-        fontSize: m ? 12 : 14,
+        fontSize: "var(--fs-label)",
         letterSpacing: lsWide,
         lineHeight: 1.2,
         color: accent,
@@ -438,7 +450,7 @@ class Component extends DCLogic {
       case2EyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
       case2TitleStyle: {
         fontFamily: archivoNarrow, fontWeight: 700,
-        fontSize: m ? 28 : 40,
+        fontSize: "var(--fs-case-title)",
         letterSpacing: ls,
         lineHeight: lh,
         color: strong,
@@ -446,7 +458,7 @@ class Component extends DCLogic {
       },
       case2SubtitleStyle: {
         fontFamily: archivo, fontWeight: 400,
-        fontSize: m ? 15 : 19,
+        fontSize: "var(--fs-case-sub)",
         lineHeight: 1.55,
         color: muted,
         margin: 0,
@@ -486,14 +498,14 @@ class Component extends DCLogic {
       bulletsStyle2: { display: "flex", flexDirection: "column", gap: m ? 14 : 26, width: "100%" },
       bulletRowStyle2: { display: "flex", flexDirection: "row", gap: 16, alignItems: "flex-start", width: "100%" },
       bulletTextStyle2: {
-        fontFamily: archivo, fontWeight: 400, fontSize: m ? 17 : 21,
+        fontFamily: archivo, fontWeight: 400, fontSize: "var(--fs-bullet)",
         lineHeight: 1.6, color: bodyText, flexGrow: 1, margin: 0,
       },
       primaryBtnStyle: {
         display: "flex", alignItems: "center", justifyContent: "center",
         width: m ? "100%" : 232, height: 44,
         borderRadius: 8, backgroundColor: accent, color: "var(--text-on-accent)",
-        fontFamily: archivo, fontWeight: 600, fontSize: 14,
+        fontFamily: archivo, fontWeight: 600, fontSize: "var(--fs-button)",
         letterSpacing: "0.04em", textDecoration: "none", textAlign: "center",
         boxSizing: "border-box",
       },
@@ -511,7 +523,7 @@ class Component extends DCLogic {
       },
       footerParaStyle: {
         fontFamily: archivo, fontWeight: 400,
-        fontSize: m ? 13 : 16, lineHeight: m ? 1.5 : "22px",
+        fontSize: "var(--fs-body)", lineHeight: m ? 1.5 : "22px",
         color: muted, flexGrow: 1, margin: 0,
       },
       footerMetaStyle: {
@@ -519,9 +531,9 @@ class Component extends DCLogic {
         width: m ? "100%" : 249, flexShrink: 0,
       },
       footerPairStyle: { display: "flex", flexDirection: "column", gap: m ? 2 : 4 },
-      footerLabelStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, color: muted, margin: 0 },
-      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, letterSpacing: ls, color: bodyText, margin: 0 },
-      copyrightStyle: { fontFamily: mono, fontWeight: 400, fontSize: m ? 12 : 15, color: muted, marginTop: -10 },
+      footerLabelStyle: { fontFamily: archivo, fontWeight: 400, fontSize: "var(--fs-caption)", color: muted, margin: 0 },
+      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: "var(--fs-caption)", letterSpacing: ls, color: bodyText, margin: 0 },
+      copyrightStyle: { fontFamily: mono, fontWeight: 400, fontSize: "var(--fs-caption)", color: muted, marginTop: -10 },
     };
   }
 }
