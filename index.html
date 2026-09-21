@@ -10,12 +10,26 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@600&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Arclight Design System tokens (verbatim from Design/project/tokens/colors.css + typography.css) */
+    :root {
+      --ink-900:#161616; --ink-800:#242424; --ink-700:#3a3a3a; --ink-600:#5c5c5c; --ink-200:#dcdcdc; --ink-50:#f7f7f5;
+      --paper:#fdfdfa; --white:#ffffff;
+      --violet-700:#4a30b0; --violet-500:#6c4ce0;
+      --surface-page:var(--paper); --surface-sunken:var(--ink-50);
+      --text-primary:var(--ink-900); --text-secondary:var(--ink-600); --text-on-accent:var(--white);
+      --accent-primary:var(--violet-500); --accent-primary-hover:var(--violet-700);
+      --border-subtle:var(--ink-200);
+      --font-display:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;
+      --font-body:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;
+      --font-mono:'Space Mono','IBM Plex Mono',monospace;
+      --lh-tight:1.02; --ls-tight:-0.02em; --ls-wide:0.08em;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; background: rgb(250,250,250); }
-    a { color: rgb(47,107,232); text-decoration: underline; }
-    a:hover { color: rgb(30,80,190); }
+    body { margin: 0; background: var(--surface-page); }
+    a { color: var(--accent-primary); text-decoration: underline; }
+    a:hover { color: var(--accent-primary-hover); }
   </style>
 </helmet>
 <div style="{{ pageStyle }}">
@@ -27,8 +41,8 @@
       <div style="{{ heroBgStyle }}"></div>
       <div style="{{ heroOverlayStyle }}"></div>
       <sc-if value="{{ notMobile }}">
-        <div style="position:absolute;left:40px;top:54px;width:1px;height:300px;background:rgb(216,221,225)"></div>
-        <div style="position:absolute;left:37.5px;top:52px;width:5px;height:5px;border-radius:50%;background:rgb(90,97,103)"></div>
+        <div style="position:absolute;left:40px;top:54px;width:1px;height:300px;background:var(--border-subtle)"></div>
+        <div style="position:absolute;left:37.5px;top:52px;width:5px;height:5px;border-radius:50%;background:var(--text-secondary)"></div>
       </sc-if>
       <div style="{{ heroContentStyle }}">
         <span style="{{ eyebrowStyle }}">SELECTED WORK · MARKETING AUTOMATION</span>
@@ -63,7 +77,7 @@
         <div style="{{ rightColStyle }}">
           <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" style="{{ videoCardStyle }}" data-name="video-card">
             <div style-hover="{{ playHoverStyle }}" style="{{ playIconStyle }}" aria-label="Play shop walkthrough">
-              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(47,107,232)"><path d="M8 5v14l11-7z"></path></svg>
+              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(108,76,224)"><path d="M8 5v14l11-7z"></path></svg>
             </div>
             <span style="{{ videoLabelStyle }}">SHOP WALKTHROUGH</span>
             <span style="{{ videoSubLabelStyle }}">Click to play — streams from Google Drive.</span>
@@ -155,14 +169,22 @@ class Component extends DCLogic {
 
   renderVals() {
     const m = this.state.isMobile;
-    const strong = "rgb(12,14,16)";
-    const muted = "rgb(90,97,103)";
-    const accent = "rgb(47,107,232)";
-    const border = "rgb(216,221,225)";
-    const archivo = "Archivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
-    const archivoNarrow = "'Archivo Narrow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
-    const mono = "'Roboto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace";
-    const inter = "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
+    // Arclight Design System tokens (defined in the <helmet> :root block above)
+    const strong = "var(--text-primary)";
+    const muted = "var(--text-secondary)";
+    const accent = "var(--accent-primary)";
+    const border = "var(--border-subtle)";
+    const paper = "var(--surface-page)";
+    const sunken = "var(--surface-sunken)";
+    const archivo = "var(--font-body)";
+    const archivoNarrow = "var(--font-display)";
+    const mono = "var(--font-mono)";
+    const inter = "var(--font-body)";
+    const ls = "var(--ls-tight)";
+    const lh = "var(--lh-tight)";
+    const lsWide = "var(--ls-wide)";
+    const accentLine = "rgba(108,76,224,0.35)";
+    const paperA = (a) => "rgba(253,253,250," + a + ")";
 
     return {
       notMobile: !m,
@@ -171,7 +193,7 @@ class Component extends DCLogic {
 
       pageStyle: {
         fontFamily: archivo,
-        backgroundColor: "rgb(250,250,250)",
+        backgroundColor: paper,
         color: strong,
         display: "flex",
         flexDirection: "column",
@@ -195,7 +217,7 @@ class Component extends DCLogic {
         position: "relative",
         zIndex: 1,
         overflow: "hidden",
-        backgroundColor: m ? "rgb(250,250,250)" : "transparent",
+        backgroundColor: m ? paper : "transparent",
         height: m ? "auto" : 400,
         padding: m ? "56px 24px 44px 24px" : "0",
         display: "flex",
@@ -210,7 +232,7 @@ class Component extends DCLogic {
       } : { display: "none" },
       heroOverlayStyle: {
         position: "absolute", inset: 0,
-        background: "linear-gradient(180deg, rgba(250,250,250,0.55) 0%, rgba(250,250,250,0.35) 50%, rgba(250,250,250,0.05) 100%)",
+        background: "linear-gradient(180deg, " + paperA(0.55) + " 0%, " + paperA(0.35) + " 50%, " + paperA(0.05) + " 100%)",
       },
       heroContentStyle: {
         position: "relative",
@@ -223,19 +245,19 @@ class Component extends DCLogic {
         width: "100%",
       },
       eyebrowStyle: {
-        fontFamily: mono, fontWeight: 500,
+        fontFamily: mono, fontWeight: 400,
         fontSize: m ? 12 : 14,
-        letterSpacing: "0.14em",
+        letterSpacing: lsWide,
         lineHeight: 1.2,
         color: accent,
         whiteSpace: m ? "normal" : "nowrap",
         margin: 0,
       },
       h1Style: {
-        fontFamily: archivoNarrow, fontWeight: 600,
+        fontFamily: archivoNarrow, fontWeight: 700,
         fontSize: m ? 44 : 68,
-        letterSpacing: "-0.014em",
-        lineHeight: 1.04,
+        letterSpacing: ls,
+        lineHeight: lh,
         color: strong,
         margin: 0,
         maxWidth: m ? "100%" : 900,
@@ -260,7 +282,7 @@ class Component extends DCLogic {
       case1Style: {
         position: "relative",
         zIndex: 1,
-        backgroundColor: m ? "rgb(250,250,250)" : "transparent",
+        backgroundColor: m ? paper : "transparent",
         display: "flex",
         flexDirection: "column",
         gap: m ? 28 : 64,
@@ -278,10 +300,10 @@ class Component extends DCLogic {
       },
       eyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
       caseTitleStyle: {
-        fontFamily: archivoNarrow, fontWeight: 600,
+        fontFamily: archivoNarrow, fontWeight: 700,
         fontSize: m ? 28 : 40,
-        letterSpacing: "-0.014em",
-        lineHeight: 1.04,
+        letterSpacing: ls,
+        lineHeight: lh,
         color: strong,
         margin: 0,
       },
@@ -325,14 +347,14 @@ class Component extends DCLogic {
       qrCardStyle: {
         display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
         borderRadius: 12,
-        boxShadow: "inset 0 0 0 1px rgba(47,107,232,0.35)",
+        boxShadow: "inset 0 0 0 1px " + accentLine,
         padding: m ? "16px 18px" : "16px 20px",
         width: "100%",
       },
       qrImgStyle: { width: m ? 84 : 120, height: m ? 84 : 120, borderRadius: 4, objectFit: "contain", flexShrink: 0 },
       scanLabelStyle: {
-        fontFamily: mono, fontWeight: 500, fontSize: m ? 13 : 15,
-        letterSpacing: "0.14em", color: accent, whiteSpace: "nowrap", margin: 0,
+        fontFamily: mono, fontWeight: 400, fontSize: m ? 13 : 15,
+        letterSpacing: lsWide, color: accent, whiteSpace: "nowrap", margin: 0,
       },
 
       rightColStyle: {
@@ -346,21 +368,21 @@ class Component extends DCLogic {
         height: m ? 195 : 477,
         borderRadius: 12,
         overflow: "hidden",
-        backgroundImage: "linear-gradient(rgba(247,250,252,0.55),rgba(247,250,252,0.55)), url(assets/video-thumb.jpg)",
+        backgroundImage: "linear-gradient(" + paperA(0.55) + "," + paperA(0.55) + "), url(assets/video-thumb.jpg)",
         backgroundSize: "cover", backgroundPosition: "center",
-        boxShadow: "inset 0 0 0 1px rgba(216,221,225,0.6)",
+        boxShadow: "inset 0 0 0 1px rgba(220,220,220,0.6)",
         display: "flex", flexDirection: "column", gap: m ? 10 : 16,
         justifyContent: "center", alignItems: "center",
       },
       playIconStyle: {
         width: m ? 56 : 104, height: m ? 56 : 104,
         borderRadius: "50%",
-        boxShadow: "inset 0 0 0 1.5px rgb(47,107,232)",
-        background: "rgba(250,250,250,0.6)",
+        boxShadow: "inset 0 0 0 1.5px " + accent,
+        background: paperA(0.6),
         border: "none", cursor: "pointer",
         display: "flex", alignItems: "center", justifyContent: "center",
       },
-      playHoverStyle: { background: "rgba(250,250,250,0.9)" },
+      playHoverStyle: { background: paperA(0.9) },
       playIconSvgSize: m ? 24 : 44,
       videoLabelStyle: {
         fontFamily: inter, fontWeight: 500, fontSize: m ? 13 : 16,
@@ -373,13 +395,13 @@ class Component extends DCLogic {
       buttonRowStyle: { width: "100%" },
       externalLinkCardStyle: {
         borderRadius: 12,
-        boxShadow: "inset 0 0 0 1px rgba(47,107,232,0.35)",
+        boxShadow: "inset 0 0 0 1px " + accentLine,
         padding: m ? "16px 18px" : "16px 20px",
         display: "flex", flexDirection: "column", gap: 8, width: "100%",
       },
       linkLabelStyle: {
-        fontFamily: mono, fontWeight: 500, fontSize: m ? 13 : 15,
-        letterSpacing: "0.14em", color: accent, margin: 0,
+        fontFamily: mono, fontWeight: 400, fontSize: m ? 13 : 15,
+        letterSpacing: lsWide, color: accent, margin: 0,
       },
       urlRowStyle: { display: "flex", flexDirection: "row", gap: 10, alignItems: "center", width: "100%" },
       urlTextStyle: {
@@ -403,9 +425,9 @@ class Component extends DCLogic {
         display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
       },
       case2EyebrowStyle: {
-        fontFamily: mono, fontWeight: 500,
+        fontFamily: mono, fontWeight: 400,
         fontSize: m ? 12 : 14,
-        letterSpacing: "0.14em",
+        letterSpacing: lsWide,
         lineHeight: 1.2,
         color: accent,
         whiteSpace: "nowrap",
@@ -413,10 +435,10 @@ class Component extends DCLogic {
       },
       case2EyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
       case2TitleStyle: {
-        fontFamily: archivoNarrow, fontWeight: 600,
+        fontFamily: archivoNarrow, fontWeight: 700,
         fontSize: m ? 28 : 40,
-        letterSpacing: "-0.014em",
-        lineHeight: 1.04,
+        letterSpacing: ls,
+        lineHeight: lh,
         color: strong,
         margin: 0,
       },
@@ -432,7 +454,7 @@ class Component extends DCLogic {
 
       case2Style: {
         position: "relative",
-        backgroundColor: m ? "rgb(250,250,250)" : "rgb(246,247,248)",
+        backgroundColor: m ? paper : sunken,
         display: "flex", flexDirection: "column",
         gap: m ? 24 : 20,
         padding: m ? "48px 24px" : "48px 72px",
@@ -442,7 +464,7 @@ class Component extends DCLogic {
         position: "absolute", inset: 0, zIndex: 0,
         backgroundImage: "url(assets/case02-bg.png)", backgroundSize: "cover", backgroundPosition: "center",
       },
-      case2WashStyle: m ? { display: "none" } : { position: "absolute", inset: 0, zIndex: 0, backgroundColor: "rgba(250,250,250,0.22)" },
+      case2WashStyle: m ? { display: "none" } : { position: "absolute", inset: 0, zIndex: 0, backgroundColor: paperA(0.22) },
 
       case2ContentRowStyle: {
         position: "relative", zIndex: 1,
@@ -468,19 +490,19 @@ class Component extends DCLogic {
       primaryBtnStyle: {
         display: "flex", alignItems: "center", justifyContent: "center",
         width: m ? "100%" : 232, height: 44,
-        borderRadius: 8, backgroundColor: strong, color: "rgb(250,250,250)",
+        borderRadius: 8, backgroundColor: accent, color: "var(--text-on-accent)",
         fontFamily: archivo, fontWeight: 600, fontSize: 14,
         letterSpacing: "0.04em", textDecoration: "none", textAlign: "center",
         boxSizing: "border-box",
       },
-      primaryBtnHoverStyle: { backgroundColor: "rgb(40,44,48)" },
+      primaryBtnHoverStyle: { backgroundColor: "var(--accent-primary-hover)" },
 
       footerStyle: {
-        backgroundColor: "rgb(250,250,250)",
+        backgroundColor: paper,
         display: "flex", flexDirection: "column", gap: 20,
         padding: m ? "32px 24px" : "32px 72px",
       },
-      footerDividerStyle: { height: 1, backgroundColor: m ? "rgb(229,232,235)" : border, width: "100%" },
+      footerDividerStyle: { height: 1, backgroundColor: border, width: "100%" },
       footerMainRowStyle: {
         display: "flex", flexDirection: m ? "column" : "row",
         gap: m ? 20 : 48, alignItems: "flex-start", width: "100%",
@@ -496,7 +518,7 @@ class Component extends DCLogic {
       },
       footerPairStyle: { display: "flex", flexDirection: "column", gap: m ? 2 : 4 },
       footerLabelStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, color: muted, margin: 0 },
-      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, color: strong, margin: 0 },
+      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, letterSpacing: ls, color: strong, margin: 0 },
       copyrightStyle: { fontFamily: mono, fontWeight: 400, fontSize: m ? 12 : 15, color: muted, marginTop: -10 },
     };
   }
