@@ -26,17 +26,18 @@
       --font-body:'Hanken Grotesk',-apple-system,Helvetica,Arial,sans-serif;
       --font-mono:'Space Mono','IBM Plex Mono',monospace;
       --lh-tight:1.02; --ls-tight:-0.02em; --ls-wide:0.08em;
-      /* Typography scale (desktop) */
-      --fs-hero-title:68px; --fs-hero-lead:18px; --fs-hero-text:17px;
-      --fs-label:13px; --fs-case-title:34px; --fs-case-sub:18px;
-      --fs-body:16px; --fs-bullet:16px; --fs-caption:14px; --fs-button:14px; --fs-link:14px;
+      /* Typography scale (desktop). --type-scale is one global knob for all sizes except the hero headline. */
+      --type-scale:1.06;
+      --fs-hero-title:68px; --fs-hero-lead:calc(18px * var(--type-scale)); --fs-hero-text:calc(17px * var(--type-scale));
+      --fs-label:calc(13px * var(--type-scale)); --fs-case-title:calc(34px * var(--type-scale)); --fs-case-sub:calc(18px * var(--type-scale));
+      --fs-body:calc(16px * var(--type-scale)); --fs-bullet:calc(16px * var(--type-scale)); --fs-caption:calc(14px * var(--type-scale)); --fs-button:calc(14px * var(--type-scale)); --fs-link:calc(14px * var(--type-scale));
     }
     /* Typography scale (mobile, same breakpoint as the page logic) */
     @media (max-width: 859px) {
       :root {
-        --fs-hero-title:44px; --fs-hero-lead:17px; --fs-hero-text:16px;
-        --fs-label:12px; --fs-case-title:30px; --fs-case-sub:17px;
-        --fs-body:16px; --fs-bullet:16px; --fs-caption:14px; --fs-button:14px; --fs-link:14px;
+        --fs-hero-title:44px; --fs-hero-lead:calc(17px * var(--type-scale)); --fs-hero-text:calc(16px * var(--type-scale));
+        --fs-label:calc(12px * var(--type-scale)); --fs-case-title:calc(30px * var(--type-scale)); --fs-case-sub:calc(17px * var(--type-scale));
+        --fs-body:calc(16px * var(--type-scale)); --fs-bullet:calc(16px * var(--type-scale)); --fs-caption:calc(14px * var(--type-scale)); --fs-button:calc(14px * var(--type-scale)); --fs-link:calc(14px * var(--type-scale));
       }
     }
     * { box-sizing: border-box; }
