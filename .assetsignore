@@ -1,3 +1,7 @@
+.git
+.git/
+.wrangler
+node_modules
 Design/
 wrangler.jsonc
 .assetsignore
