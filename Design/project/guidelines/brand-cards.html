@@ -1,0 +1,13 @@
+<!-- @dsCard group="Brand" viewport="700x220" name="Card treatments" subtitle="Bordered (default), elevated (overlay), inverse (dark section)" -->
+<!DOCTYPE html><html><head><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:16px;background:var(--surface-page);display:flex;gap:16px;font-family:var(--font-body)}
+.c{flex:1;padding:20px;border-radius:var(--radius-md)}
+.bordered{background:var(--surface-card);border:var(--border-w) solid var(--border-subtle)}
+.elevated{background:var(--surface-card);box-shadow:var(--shadow-md)}
+.inverse{background:var(--ink-900);color:var(--paper)}
+.t{font-family:var(--font-display);font-weight:700;font-size:16px;margin:0 0 6px}
+</style></head><body>
+<div class="c bordered"><p class="t">Bordered</p>hairline border, flat</div>
+<div class="c elevated"><p class="t">Elevated</p>shadow, no border</div>
+<div class="c inverse"><p class="t">Inverse</p>ink-filled, dark section</div>
+</body></html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Desktop Landing Page" description="Hero, content, project card, CTA and footer built from the Arclight Design System" -->
+<helmet>
+<title>Arclight — Landing Page Reference</title>
+<script src="./ds-base.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+</helmet>
+<div style="background:var(--surface-page);min-height:100vh">
+<header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(253,253,250,0.92);backdrop-filter:blur(8px);border-bottom:var(--border-w) solid var(--border-subtle)">
+<div style="font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:var(--ls-tight)">Arclight</div>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Button" hint-size="140px,44px">Kontakt</x-import>
+</header>
+
+<section style="max-width:1240px;margin:0 auto;padding:96px 40px 64px">
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Badge" hint-size="100px,24px" tone="violet">Digital Consulting</x-import>
+<h1 style="font-family:var(--font-display);font-weight:800;font-size:5.5rem;letter-spacing:var(--ls-tight);line-height:var(--lh-tight);margin:20px 0 24px;max-width:820px;color:var(--ink-900)">Wir bauen, was als Nächstes kommt.</h1>
+<p style="font-family:var(--font-body);font-size:var(--text-body-lg);color:var(--text-secondary);max-width:560px;line-height:var(--lh-relaxed);margin:0 0 32px">Beratung, System-Integration und digitale Services für Unternehmen, die schneller wachsen wollen als ihr Bestand es erlaubt.</p>
+<div style="display:flex;gap:14px">
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Button" hint-size="220px,48px" variant="accent" icon="arrow-right">Leistungen entdecken</x-import>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Button" hint-size="140px,48px" variant="secondary">Karriere</x-import>
+</div>
+</section>
+
+<div style="display:grid;grid-template-columns:repeat(8,1fr);height:140px">
+<div style="background:var(--surface-mosaic-a)"></div><div style="background:var(--surface-mosaic-e)"></div><div style="background:var(--surface-mosaic-b)"></div><div style="background:var(--surface-mosaic-e)"></div><div style="background:var(--surface-mosaic-c)"></div><div style="background:var(--surface-mosaic-e)"></div><div style="background:var(--surface-mosaic-d)"></div><div style="background:var(--surface-mosaic-e)"></div>
+</div>
+
+<section style="max-width:1240px;margin:0 auto;padding:64px 40px">
+<div style="font-family:var(--font-display);font-size:var(--text-micro);letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:20px">Leistungen</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Card" hint-size="100%,150px" eyebrow="Service" title="Artificial Intelligence" accent="var(--violet-500)">Von Piloten zu produktiven Agenten.</x-import>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Card" hint-size="100%,150px" eyebrow="Service" title="Cloud Computing" accent="var(--teal-500)">Migration, Betrieb, Skalierung.</x-import>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Card" hint-size="100%,150px" eyebrow="Service" title="Cybersecurity" accent="var(--coral-500)">Schutz für kritische Systeme.</x-import>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Card" hint-size="100%,150px" eyebrow="Service" title="Data World" accent="var(--amber-500)">Von Rohdaten zu Entscheidungen.</x-import>
+</div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:24px 40px 80px">
+<div style="font-family:var(--font-display);font-size:var(--text-micro);letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--text-muted);font-weight:700;margin-bottom:20px">Ausgewähltes Projekt</div>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Card" hint-size="100%,220px" variant="elevated" eyebrow="Case Study" title="Cloud-Migration für einen Handelskonzern">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:var(--font-body);color:var(--text-secondary);line-height:var(--lh-relaxed);margin:0;max-width:640px">Migration von 40+ Legacy-Systemen auf eine hybride Cloud-Plattform bei laufendem Betrieb — Rollout in 9 Monaten, ohne Downtime.</p>
+<div style="display:flex;gap:10px">
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Badge" hint-size="80px,24px" tone="teal">Cloud</x-import>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Badge" hint-size="80px,24px" tone="amber">Retail</x-import>
+</div>
+</div>
+</x-import>
+</section>
+
+<section style="background:var(--ink-900);color:var(--paper);padding:80px 40px;text-align:center">
+<h2 style="font-family:var(--font-display);font-weight:800;font-size:var(--text-h1);margin:0 0 16px">Bereit für den nächsten Schritt?</h2>
+<p style="font-family:var(--font-body);color:var(--ink-300);max-width:520px;margin:0 auto 32px;line-height:var(--lh-relaxed)">Sprechen wir über euer Projekt — unverbindlich und direkt mit einem Berater.</p>
+<x-import component-from-global-scope="ArclightDesignSystem_6b18d9.Button" hint-size="180px,52px" variant="accent" size="lg">Kontakt aufnehmen</x-import>
+</section>
+
+<footer style="background:var(--ink-900);color:var(--paper);padding:64px 40px 32px;font-family:var(--font-body);border-top:1px solid var(--ink-700)">
+<div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+<div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--ink-300);margin-bottom:14px">Services</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Artificial Intelligence</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Cloud Computing</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Cybersecurity</div>
+</div>
+<div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--ink-300);margin-bottom:14px">Industries</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Financial Services</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Retail & Consumer</div>
+</div>
+<div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--ink-300);margin-bottom:14px">We are</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Company Profile</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Newsroom</div>
+</div>
+<div>
+<div style="font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--ink-300);margin-bottom:14px">Careers</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Job Search</div>
+<div style="font-size:var(--text-small);color:var(--ink-200);margin-bottom:10px">Life at Arclight</div>
+</div>
+</div>
+<div style="max-width:1240px;margin:48px auto 0;padding-top:24px;border-top:1px solid var(--ink-700);font-size:var(--text-micro);color:var(--ink-400)">Arclight © 2026 — fictional demonstration brand.</div>
+</footer>
+</div>
+
+</x-dc>
+</body>
+</html>

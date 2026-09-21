@@ -1,0 +1,3 @@
+<!-- Phosphor Icons (CDN substitute — no brand icon set was provided) -->
+<!-- Usage: <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/index.js"></script> -->
+<!-- Then: <i class="ph ph-arrow-right"></i> etc. Regular weight only, matches Hanken Grotesk's rounded-terminal grotesk character. -->

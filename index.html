@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Narrow:wght@600&family=Roboto+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: rgb(250,250,250); }
+    a { color: rgb(47,107,232); text-decoration: underline; }
+    a:hover { color: rgb(30,80,190); }
+  </style>
+</helmet>
+<div style="{{ pageStyle }}">
+
+  <div style="{{ heroCase1WrapStyle }}">
+    <div style="{{ heroCase1BgStyle }}"></div>
+
+    <div style="{{ heroStyle }}">
+      <div style="{{ heroBgStyle }}"></div>
+      <div style="{{ heroOverlayStyle }}"></div>
+      <sc-if value="{{ notMobile }}">
+        <div style="position:absolute;left:40px;top:54px;width:1px;height:300px;background:rgb(216,221,225)"></div>
+        <div style="position:absolute;left:37.5px;top:52px;width:5px;height:5px;border-radius:50%;background:rgb(90,97,103)"></div>
+      </sc-if>
+      <div style="{{ heroContentStyle }}">
+        <span style="{{ eyebrowStyle }}">SELECTED WORK</span>
+        <h1 style="{{ h1Style }}">Brand is the mission.</h1>
+        <p style="{{ subtitle1Style }}">Svenja Mumelter · Application for Brand Specialist, Isar Aerospace</p>
+        <p style="{{ subtitle2Style }}">A selection of projects across visual communication, content and integrated marketing.</p>
+      </div>
+    </div>
+
+    <div style="{{ case1Style }}">
+      <div style="{{ headerStyle }}">
+        <div style="{{ eyebrowRowStyle }}">
+          <span style="{{ eyebrowStyle }}">CASE 01</span>
+          <div style="{{ eyebrowLineStyle }}"></div>
+        </div>
+        <h2 style="{{ caseTitleStyle }}">RoyalShrimp.de</h2>
+        <p style="{{ caseSubtitleStyle }}">Brand Building, Visual Identity, Content &amp; Owned Channels</p>
+      </div>
+      <div style="{{ contentRowStyle }}">
+        <div style="{{ leftColStyle }}">
+          <div style="{{ bulletsStyle }}">
+            <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><div style="{{ bulletDot }}"></div></div><span style="{{ bulletTextStyle1 }}">Co founder, jointly built the online shop from scratch starting in May 2020</span></div>
+            <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><div style="{{ bulletDot }}"></div></div><span style="{{ bulletTextStyle1 }}">Operated the shop until the end of 2024</span></div>
+            <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><div style="{{ bulletDot }}"></div></div><span style="{{ bulletTextStyle1 }}">Backend, shop structure, design, product management, website content, photography and video production were handled entirely by the two of us</span></div>
+            <div style="{{ bulletRowStyle1 }}"><div style="{{ bulletDotWrap }}"><div style="{{ bulletDot }}"></div></div><span style="{{ bulletTextStyle1 }}">At the time, without AI. Today, the same work could be done much more efficiently using AI, automation, and tools and data sources connected via MCP</span></div>
+          </div>
+          <div style="{{ qrCardStyle }}">
+            <img src="assets/qr-code.png" alt="QR code linking to RoyalShrimp.de" style="{{ qrImgStyle }}" />
+            <span style="{{ scanLabelStyle }}">SCAN TO OPEN</span>
+          </div>
+        </div>
+        <div style="{{ rightColStyle }}">
+          <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" style="{{ videoCardStyle }}" data-name="video-card">
+            <div style-hover="{{ playHoverStyle }}" style="{{ playIconStyle }}" aria-label="Play shop walkthrough">
+              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(47,107,232)"><path d="M8 5v14l11-7z"></path></svg>
+            </div>
+            <span style="{{ videoLabelStyle }}">SHOP WALKTHROUGH</span>
+            <span style="{{ videoSubLabelStyle }}">Click to play — streams from Google Drive.</span>
+          </a>
+          <div style="{{ buttonRowStyle }}">
+            <div style="{{ externalLinkCardStyle }}">
+              <span style="{{ linkLabelStyle }}">LINK TO OPEN &amp; COPY</span>
+              <div style="{{ urlRowStyle }}">
+                <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" style="{{ urlTextStyle }}">drive.google.com/file/d/1ZM4CWZ1CJGp…/view?usp=sharing</a>
+                <button style-hover="{{ copyHoverStyle }}" style="{{ copyIconStyle }}" onClick="{{ copyLink1 }}" aria-label="Copy link">{{ copyIcon1 }}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="{{ case2Style }}" data-section="case2">
+    <div style="{{ case2BgStyle }}"></div>
+    <div style="{{ case2WashStyle }}"></div>
+    <div style="{{ case2HeaderStyle }}">
+      <div style="{{ case2EyebrowRowStyle }}">
+        <span style="{{ case2EyebrowStyle }}">CASE 02</span>
+        <div style="{{ case2EyebrowLineStyle }}"></div>
+      </div>
+      <h2 style="{{ case2TitleStyle }}">Cuply</h2>
+      <p style="{{ case2SubtitleStyle }}">Integrated Marketing Case based on AI tools available mid 2026</p>
+    </div>
+    <div style="{{ case2ContentRowStyle }}">
+      <img src="assets/cuply-book.jpg" alt="Cuply — fictional marketing case study book cover" style="{{ cuplyImgStyle }}" />
+      <div style="{{ case2RightColStyle }}">
+        <div style="{{ bulletsStyle2 }}">
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><div style="{{ case2BulletDot }}"></div></div><span style="{{ bulletTextStyle2 }}">Fictional marketing case study, 105 pages</span></div>
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><div style="{{ case2BulletDot }}"></div></div><span style="{{ bulletTextStyle2 }}">Strategy, positioning, content, campaigns and execution</span></div>
+          <div style="{{ bulletRowStyle2 }}"><div style="{{ case2BulletDotWrap }}"><div style="{{ case2BulletDot }}"></div></div><span style="{{ bulletTextStyle2 }}">Open or download as PDF</span></div>
+        </div>
+        <a href="https://drive.google.com/file/d/1D6PM6L-wvPN5Ki1uZ-346SJD_HgwOttX/view?usp=sharing" target="_blank" rel="noopener" style-hover="{{ primaryBtnHoverStyle }}" style="{{ primaryBtnStyle }}">VIEW FULL CASE STUDY</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="{{ footerStyle }}">
+    <div style="{{ footerDividerStyle }}"></div>
+    <div style="{{ footerMainRowStyle }}">
+      <p style="{{ footerParaStyle }}">This portfolio page was created specifically for my application as Brand Specialist at Isar Aerospace.</p>
+      <div style="{{ footerMetaStyle }}">
+        <div style="{{ footerPairStyle }}">
+          <span style="{{ footerLabelStyle }}">Concept &amp; Design</span>
+          <span style="{{ footerValueStyle }}">Svenja Mumelter · Figma</span>
+        </div>
+        <div style="{{ footerPairStyle }}">
+          <span style="{{ footerLabelStyle }}">Development</span>
+          <span style="{{ footerValueStyle }}">Claude Code · AI assisted workflow</span>
+        </div>
+      </div>
+    </div>
+    <span style="{{ copyrightStyle }}">© 2026 Svenja Mumelter · Munich</span>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    isMobile: typeof window !== "undefined" ? window.innerWidth <= 859 : false,
+    copied1: false,
+  };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const m = window.innerWidth <= 859;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m });
+    };
+    window.addEventListener("resize", this._onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._onResize);
+  }
+
+  copyLink1 = () => {
+    const text = "https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing";
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    this.setState({ copied1: true });
+    clearTimeout(this._t1);
+    this._t1 = setTimeout(() => this.setState({ copied1: false }), 1500);
+  };
+
+  renderVals() {
+    const m = this.state.isMobile;
+    const strong = "rgb(12,14,16)";
+    const muted = "rgb(90,97,103)";
+    const accent = "rgb(47,107,232)";
+    const border = "rgb(216,221,225)";
+    const archivo = "Archivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
+    const archivoNarrow = "'Archivo Narrow', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
+    const mono = "'Roboto Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace";
+    const inter = "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
+
+    return {
+      notMobile: !m,
+      copyIcon1: this.state.copied1 ? "✓" : "⧉",
+      copyLink1: this.copyLink1,
+
+      pageStyle: {
+        fontFamily: archivo,
+        backgroundColor: "rgb(250,250,250)",
+        color: strong,
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+        width: "100%",
+        maxWidth: 1440,
+        margin: "0 auto",
+      },
+
+      heroCase1WrapStyle: {
+        position: "relative",
+      },
+      heroCase1BgStyle: m ? { display: "none" } : {
+        position: "absolute", inset: 0, zIndex: 0,
+        backgroundImage: "url(assets/hero-earth.jpg)",
+        backgroundPosition: "top center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      },
+      heroStyle: {
+        position: "relative",
+        zIndex: 1,
+        overflow: "hidden",
+        backgroundColor: m ? "rgb(250,250,250)" : "transparent",
+        height: m ? "auto" : 400,
+        padding: m ? "56px 24px 44px 24px" : "0",
+        display: "flex",
+        alignItems: m ? "flex-start" : "stretch",
+      },
+      heroBgStyle: m ? {
+        position: "absolute", inset: 0,
+        backgroundImage: "url(assets/hero-earth.jpg)",
+        backgroundPosition: "50% 0%",
+        backgroundSize: "100% 238%",
+        backgroundRepeat: "no-repeat",
+      } : { display: "none" },
+      heroOverlayStyle: {
+        position: "absolute", inset: 0,
+        background: "linear-gradient(180deg, rgba(250,250,250,0.55) 0%, rgba(250,250,250,0.35) 50%, rgba(250,250,250,0.05) 100%)",
+      },
+      heroContentStyle: {
+        position: "relative",
+        display: "flex",
+        flexDirection: "column",
+        gap: m ? 12 : 16,
+        alignItems: "flex-start",
+        justifyContent: "center",
+        padding: m ? 0 : "0 72px",
+        width: "100%",
+      },
+      eyebrowStyle: {
+        fontFamily: mono, fontWeight: 500,
+        fontSize: m ? 12 : 14,
+        letterSpacing: "0.14em",
+        lineHeight: 1.2,
+        color: accent,
+        whiteSpace: "nowrap",
+        margin: 0,
+      },
+      h1Style: {
+        fontFamily: archivoNarrow, fontWeight: 600,
+        fontSize: m ? 44 : 68,
+        letterSpacing: "-0.014em",
+        lineHeight: 1.04,
+        color: strong,
+        margin: 0,
+      },
+      subtitle1Style: {
+        fontFamily: archivo, fontWeight: 600,
+        fontSize: m ? 15 : 20,
+        color: strong,
+        margin: 0,
+        maxWidth: m ? "100%" : 640,
+      },
+      subtitle2Style: {
+        fontFamily: archivo, fontWeight: 400,
+        fontSize: m ? 14 : 17,
+        lineHeight: 1.55,
+        color: muted,
+        margin: 0,
+        maxWidth: m ? "100%" : "none",
+        whiteSpace: m ? "normal" : "nowrap",
+      },
+
+      case1Style: {
+        position: "relative",
+        zIndex: 1,
+        backgroundColor: m ? "rgb(250,250,250)" : "transparent",
+        display: "flex",
+        flexDirection: "column",
+        gap: m ? 28 : 64,
+        padding: m ? "48px 24px 40px 24px" : "64px 72px 56px 72px",
+        alignItems: "flex-start",
+      },
+      headerStyle: {
+        display: "flex", flexDirection: "column",
+        gap: m ? 8 : 16,
+        alignItems: "flex-start",
+        width: "100%",
+      },
+      eyebrowRowStyle: {
+        display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
+      },
+      eyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
+      caseTitleStyle: {
+        fontFamily: archivoNarrow, fontWeight: 600,
+        fontSize: m ? 28 : 40,
+        letterSpacing: "-0.014em",
+        lineHeight: 1.04,
+        color: strong,
+        margin: 0,
+      },
+      caseSubtitleStyle: {
+        fontFamily: archivo, fontWeight: 400,
+        fontSize: m ? 15 : 19,
+        lineHeight: 1.55,
+        color: muted,
+        margin: 0,
+      },
+
+      contentRowStyle: {
+        display: "flex",
+        flexDirection: m ? "column" : "row",
+        gap: m ? 28 : 24,
+        alignItems: m ? "flex-start" : "stretch",
+        width: "100%",
+      },
+      leftColStyle: {
+        display: "flex", flexDirection: "column",
+        gap: 24,
+        justifyContent: m ? "flex-start" : "space-between",
+        alignItems: "flex-start",
+        width: m ? "100%" : 424,
+        flexShrink: 0,
+      },
+      bulletsStyle: {
+        display: "flex", flexDirection: "column",
+        gap: m ? 16 : 18,
+        alignItems: "flex-start",
+        width: "100%",
+      },
+      bulletRowStyle1: { display: "flex", flexDirection: "row", gap: 12, alignItems: "flex-start", width: "100%" },
+      bulletDotWrap: { width: 6, padding: "10px 0", flexShrink: 0 },
+      bulletDot: { width: 6, height: 6, borderRadius: "50%", backgroundColor: accent },
+      bulletTextStyle1: {
+        fontFamily: archivo, fontWeight: 400,
+        fontSize: m ? 16 : 17,
+        lineHeight: 1.6, color: strong, flexGrow: 1, margin: 0,
+      },
+      qrCardStyle: {
+        display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
+        borderRadius: 12,
+        boxShadow: "inset 0 0 0 1px rgba(47,107,232,0.35)",
+        padding: m ? "16px 18px" : "16px 20px",
+        width: "100%",
+      },
+      qrImgStyle: { width: m ? 84 : 120, height: m ? 84 : 120, borderRadius: 4, objectFit: "contain", flexShrink: 0 },
+      scanLabelStyle: {
+        fontFamily: mono, fontWeight: 500, fontSize: m ? 13 : 15,
+        letterSpacing: "0.14em", color: accent, whiteSpace: "nowrap", margin: 0,
+      },
+
+      rightColStyle: {
+        display: "flex", flexDirection: "column", gap: 16,
+        justifyContent: m ? "flex-start" : "space-between",
+        alignItems: "flex-start", width: "100%", flexGrow: 1,
+      },
+      videoCardStyle: {
+        position: "relative",
+        width: "100%",
+        height: m ? 195 : 477,
+        borderRadius: 12,
+        overflow: "hidden",
+        backgroundImage: "linear-gradient(rgba(247,250,252,0.55),rgba(247,250,252,0.55)), url(assets/video-thumb.jpg)",
+        backgroundSize: "cover", backgroundPosition: "center",
+        boxShadow: "inset 0 0 0 1px rgba(216,221,225,0.6)",
+        display: "flex", flexDirection: "column", gap: m ? 10 : 16,
+        justifyContent: "center", alignItems: "center",
+      },
+      playIconStyle: {
+        width: m ? 56 : 104, height: m ? 56 : 104,
+        borderRadius: "50%",
+        boxShadow: "inset 0 0 0 1.5px rgb(47,107,232)",
+        background: "rgba(250,250,250,0.6)",
+        border: "none", cursor: "pointer",
+        display: "flex", alignItems: "center", justifyContent: "center",
+      },
+      playHoverStyle: { background: "rgba(250,250,250,0.9)" },
+      playIconSvgSize: m ? 24 : 44,
+      videoLabelStyle: {
+        fontFamily: inter, fontWeight: 500, fontSize: m ? 13 : 16,
+        letterSpacing: m ? "0.03em" : "0.04em", color: strong, margin: 0,
+      },
+      videoSubLabelStyle: {
+        fontFamily: inter, fontWeight: 400, fontSize: m ? 12 : 14,
+        color: muted, textAlign: "center", margin: 0,
+      },
+      buttonRowStyle: { width: "100%" },
+      externalLinkCardStyle: {
+        borderRadius: 12,
+        boxShadow: "inset 0 0 0 1px rgba(47,107,232,0.35)",
+        padding: m ? "16px 18px" : "16px 20px",
+        display: "flex", flexDirection: "column", gap: 8, width: "100%",
+      },
+      linkLabelStyle: {
+        fontFamily: mono, fontWeight: 500, fontSize: m ? 13 : 15,
+        letterSpacing: "0.14em", color: accent, margin: 0,
+      },
+      urlRowStyle: { display: "flex", flexDirection: "row", gap: 10, alignItems: "center", width: "100%" },
+      urlTextStyle: {
+        fontFamily: mono, fontWeight: 400, fontSize: m ? 12 : 14,
+        color: muted, flexGrow: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis",
+      },
+      copyIconStyle: {
+        fontFamily: inter, fontSize: 14, color: accent, background: "none",
+        border: "none", cursor: "pointer", flexShrink: 0, padding: 4,
+      },
+      copyHoverStyle: { opacity: 0.7 },
+
+      case2HeaderStyle: {
+        position: "relative", zIndex: 1,
+        display: "flex", flexDirection: "column",
+        gap: m ? 8 : 16,
+        alignItems: "flex-start",
+        width: "100%",
+      },
+      case2EyebrowRowStyle: {
+        display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
+      },
+      case2EyebrowStyle: {
+        fontFamily: mono, fontWeight: 500,
+        fontSize: m ? 12 : 14,
+        letterSpacing: "0.14em",
+        lineHeight: 1.2,
+        color: accent,
+        whiteSpace: "nowrap",
+        margin: 0,
+      },
+      case2EyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
+      case2TitleStyle: {
+        fontFamily: archivoNarrow, fontWeight: 600,
+        fontSize: m ? 28 : 40,
+        letterSpacing: "-0.014em",
+        lineHeight: 1.04,
+        color: strong,
+        margin: 0,
+      },
+      case2SubtitleStyle: {
+        fontFamily: archivo, fontWeight: 400,
+        fontSize: m ? 15 : 19,
+        lineHeight: 1.55,
+        color: muted,
+        margin: 0,
+      },
+      case2BulletDotWrap: { width: 6, padding: "10px 0", flexShrink: 0 },
+      case2BulletDot: { width: 6, height: 6, borderRadius: "50%", backgroundColor: accent },
+
+      case2Style: {
+        position: "relative",
+        backgroundColor: m ? "rgb(250,250,250)" : "rgb(246,247,248)",
+        display: "flex", flexDirection: "column",
+        gap: m ? 24 : 20,
+        padding: m ? "48px 24px" : "48px 72px",
+        alignItems: "flex-start", overflow: "hidden",
+      },
+      case2BgStyle: m ? { display: "none" } : {
+        position: "absolute", inset: 0, zIndex: 0,
+        backgroundImage: "url(assets/case02-bg.png)", backgroundSize: "cover", backgroundPosition: "center",
+      },
+      case2WashStyle: m ? { display: "none" } : { position: "absolute", inset: 0, zIndex: 0, backgroundColor: "rgba(250,250,250,0.22)" },
+
+      case2ContentRowStyle: {
+        position: "relative", zIndex: 1,
+        display: "flex", flexDirection: m ? "column" : "row",
+        gap: m ? 24 : 28, alignItems: m ? "flex-start" : "center", width: "100%",
+      },
+      cuplyImgStyle: {
+        width: m ? "100%" : 432, height: m ? 428 : 540,
+        borderRadius: m ? 10 : 4, objectFit: "cover",
+        boxShadow: m ? "none" : "0 20px 40px -10px rgba(0,0,0,0.4)",
+        flexShrink: 0,
+      },
+      case2RightColStyle: {
+        display: "flex", flexDirection: "column", gap: 20,
+        width: m ? "100%" : 520, alignItems: "flex-start",
+      },
+      bulletsStyle2: { display: "flex", flexDirection: "column", gap: m ? 14 : 26, width: "100%" },
+      bulletRowStyle2: { display: "flex", flexDirection: "row", gap: 16, alignItems: "flex-start", width: "100%" },
+      bulletTextStyle2: {
+        fontFamily: archivo, fontWeight: 400, fontSize: m ? 17 : 21,
+        lineHeight: 1.6, color: strong, flexGrow: 1, margin: 0,
+      },
+      primaryBtnStyle: {
+        display: "flex", alignItems: "center", justifyContent: "center",
+        width: m ? "100%" : 232, height: 44,
+        borderRadius: 8, backgroundColor: strong, color: "rgb(250,250,250)",
+        fontFamily: archivo, fontWeight: 600, fontSize: 14,
+        letterSpacing: "0.04em", textDecoration: "none", textAlign: "center",
+        boxSizing: "border-box",
+      },
+      primaryBtnHoverStyle: { backgroundColor: "rgb(40,44,48)" },
+
+      footerStyle: {
+        backgroundColor: "rgb(250,250,250)",
+        display: "flex", flexDirection: "column", gap: 20,
+        padding: m ? "32px 24px" : "32px 72px",
+      },
+      footerDividerStyle: { height: 1, backgroundColor: m ? "rgb(229,232,235)" : border, width: "100%" },
+      footerMainRowStyle: {
+        display: "flex", flexDirection: m ? "column" : "row",
+        gap: m ? 20 : 48, alignItems: "flex-start", width: "100%",
+      },
+      footerParaStyle: {
+        fontFamily: archivo, fontWeight: 400,
+        fontSize: m ? 13 : 16, lineHeight: m ? 1.5 : "22px",
+        color: muted, flexGrow: 1, margin: 0,
+      },
+      footerMetaStyle: {
+        display: "flex", flexDirection: "column", gap: m ? 12 : 16,
+        width: m ? "100%" : 249, flexShrink: 0,
+      },
+      footerPairStyle: { display: "flex", flexDirection: "column", gap: m ? 2 : 4 },
+      footerLabelStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, color: muted, margin: 0 },
+      footerValueStyle: { fontFamily: archivo, fontWeight: 400, fontSize: m ? 13 : 16, color: strong, margin: 0 },
+      copyrightStyle: { fontFamily: mono, fontWeight: 400, fontSize: m ? 12 : 15, color: muted, marginTop: -10 },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
