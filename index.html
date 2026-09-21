@@ -17,7 +17,7 @@
     :root {
       --ink-900:#161616; --ink-800:#242424; --ink-700:#3a3a3a; --ink-600:#5c5c5c; --ink-200:#dcdcdc; --ink-50:#f7f7f5;
       --paper:#fdfdfa; --white:#ffffff;
-      --accent-green:#66b801; --accent-text:#488300; /* Reply lime (sampled from reply.com) for fills/bars/lines; same hue (87deg), darker, for small text + icons (~4.5:1) */
+      --accent-green:#348f00; /* single accent: yellow-leaning green (~98deg), tuned for ~4:1 contrast on paper */
       --surface-page:var(--paper); --surface-sunken:var(--ink-50);
       --text-primary:var(--ink-900); --text-secondary:var(--ink-600); --text-on-accent:var(--white);
       --accent-primary:var(--accent-green); --accent-primary-hover:var(--ink-900);
@@ -29,7 +29,7 @@
     }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--surface-page); }
-    a { color: var(--accent-text); text-decoration: underline; }
+    a { color: var(--accent-primary); text-decoration: underline; }
     a:hover { color: var(--accent-primary-hover); }
   </style>
 </helmet>
@@ -42,8 +42,8 @@
       <div style="{{ heroBgStyle }}"></div>
       <div style="{{ heroOverlayStyle }}"></div>
       <sc-if value="{{ notMobile }}">
-        <div style="position:absolute;left:39px;top:54px;width:2px;height:300px;background:var(--accent-primary)"></div>
-        <div style="position:absolute;left:37.5px;top:52px;width:5px;height:5px;border-radius:50%;background:var(--accent-primary)"></div>
+        <div style="position:absolute;left:40px;top:54px;width:1px;height:300px;background:var(--border-subtle)"></div>
+        <div style="position:absolute;left:37.5px;top:52px;width:5px;height:5px;border-radius:50%;background:var(--text-secondary)"></div>
       </sc-if>
       <div style="{{ heroContentStyle }}">
         <span style="{{ eyebrowStyle }}">SELECTED WORK · MARKETING AUTOMATION</span>
@@ -78,7 +78,7 @@
         <div style="{{ rightColStyle }}">
           <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" style="{{ videoCardStyle }}" data-name="video-card">
             <div style-hover="{{ playHoverStyle }}" style="{{ playIconStyle }}" aria-label="Play shop walkthrough">
-              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(72,131,0)"><path d="M8 5v14l11-7z"></path></svg>
+              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(52,143,0)"><path d="M8 5v14l11-7z"></path></svg>
             </div>
             <span style="{{ videoLabelStyle }}">SHOP WALKTHROUGH</span>
             <span style="{{ videoSubLabelStyle }}">Click to play — streams from Google Drive.</span>
@@ -175,7 +175,6 @@ class Component extends DCLogic {
     const muted = "var(--text-secondary)";
     const bodyText = "var(--ink-700)";
     const accent = "var(--accent-primary)";
-    const accentText = "var(--accent-text)";
     const border = "var(--border-subtle)";
     const paper = "var(--surface-page)";
     const sunken = "var(--surface-sunken)";
@@ -186,7 +185,7 @@ class Component extends DCLogic {
     const ls = "var(--ls-tight)";
     const lh = "var(--lh-tight)";
     const lsWide = "var(--ls-wide)";
-    const accentLine = "rgba(102,184,1,0.55)";
+    const accentLine = "rgba(52,143,0,0.35)";
     const paperA = (a) => "rgba(253,253,250," + a + ")";
 
     return {
@@ -252,7 +251,7 @@ class Component extends DCLogic {
         fontSize: m ? 12 : 14,
         letterSpacing: lsWide,
         lineHeight: 1.2,
-        color: accentText,
+        color: accent,
         whiteSpace: m ? "normal" : "nowrap",
         margin: 0,
       },
@@ -301,7 +300,7 @@ class Component extends DCLogic {
       eyebrowRowStyle: {
         display: "flex", flexDirection: "row", gap: 16, alignItems: "center",
       },
-      eyebrowLineStyle: { width: 160, height: 2, backgroundColor: accent, flexShrink: 0 },
+      eyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
       caseTitleStyle: {
         fontFamily: archivoNarrow, fontWeight: 700,
         fontSize: m ? 28 : 40,
@@ -357,7 +356,7 @@ class Component extends DCLogic {
       qrImgStyle: { width: m ? 84 : 120, height: m ? 84 : 120, borderRadius: 4, objectFit: "contain", flexShrink: 0 },
       scanLabelStyle: {
         fontFamily: mono, fontWeight: 400, fontSize: m ? 13 : 15,
-        letterSpacing: lsWide, color: accentText, whiteSpace: "nowrap", margin: 0,
+        letterSpacing: lsWide, color: accent, whiteSpace: "nowrap", margin: 0,
       },
 
       rightColStyle: {
@@ -380,7 +379,7 @@ class Component extends DCLogic {
       playIconStyle: {
         width: m ? 56 : 104, height: m ? 56 : 104,
         borderRadius: "50%",
-        boxShadow: "inset 0 0 0 1.5px " + accentText,
+        boxShadow: "inset 0 0 0 1.5px " + accent,
         background: paperA(0.6),
         border: "none", cursor: "pointer",
         display: "flex", alignItems: "center", justifyContent: "center",
@@ -404,7 +403,7 @@ class Component extends DCLogic {
       },
       linkLabelStyle: {
         fontFamily: mono, fontWeight: 400, fontSize: m ? 13 : 15,
-        letterSpacing: lsWide, color: accentText, margin: 0,
+        letterSpacing: lsWide, color: accent, margin: 0,
       },
       urlRowStyle: { display: "flex", flexDirection: "row", gap: 10, alignItems: "center", width: "100%" },
       urlTextStyle: {
@@ -412,7 +411,7 @@ class Component extends DCLogic {
         color: muted, flexGrow: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis",
       },
       copyIconStyle: {
-        fontFamily: inter, fontSize: 14, color: accentText, background: "none",
+        fontFamily: inter, fontSize: 14, color: accent, background: "none",
         border: "none", cursor: "pointer", flexShrink: 0, padding: 4,
       },
       copyHoverStyle: { opacity: 0.7 },
@@ -432,11 +431,11 @@ class Component extends DCLogic {
         fontSize: m ? 12 : 14,
         letterSpacing: lsWide,
         lineHeight: 1.2,
-        color: accentText,
+        color: accent,
         whiteSpace: "nowrap",
         margin: 0,
       },
-      case2EyebrowLineStyle: { width: 160, height: 2, backgroundColor: accent, flexShrink: 0 },
+      case2EyebrowLineStyle: { width: 160, height: 1, backgroundColor: border, flexShrink: 0 },
       case2TitleStyle: {
         fontFamily: archivoNarrow, fontWeight: 700,
         fontSize: m ? 28 : 40,
@@ -493,7 +492,7 @@ class Component extends DCLogic {
       primaryBtnStyle: {
         display: "flex", alignItems: "center", justifyContent: "center",
         width: m ? "100%" : 232, height: 44,
-        borderRadius: 8, backgroundColor: accent, color: strong,
+        borderRadius: 8, backgroundColor: accent, color: "var(--text-on-accent)",
         fontFamily: archivo, fontWeight: 600, fontSize: 14,
         letterSpacing: "0.04em", textDecoration: "none", textAlign: "center",
         boxSizing: "border-box",
