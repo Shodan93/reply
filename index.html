@@ -17,7 +17,7 @@
     :root {
       --ink-900:#161616; --ink-800:#242424; --ink-700:#3a3a3a; --ink-600:#5c5c5c; --ink-200:#dcdcdc; --ink-50:#f7f7f5;
       --paper:#fdfdfa; --white:#ffffff;
-      --accent-green:#348f00; /* single accent: yellow-leaning green (~98deg), tuned for ~4:1 contrast on paper */
+      --accent-green:#2c8400; /* single accent: yellow-leaning green (~98deg), >=4.5:1 contrast on paper and white-on-green (WCAG AA) */
       --surface-page:var(--paper); --surface-sunken:var(--ink-50);
       --text-primary:var(--ink-900); --text-secondary:var(--ink-600); --text-on-accent:var(--white);
       --accent-primary:var(--accent-green); --accent-primary-hover:var(--ink-900);
@@ -91,7 +91,7 @@
         <div style="{{ rightColStyle }}">
           <a href="https://drive.google.com/file/d/1ZM4CWZ1CJGp5d3qtxk0aSyLfXs3kVGFF/view?usp=sharing" target="_blank" rel="noopener" style="{{ videoCardStyle }}" data-name="video-card">
             <div style-hover="{{ playHoverStyle }}" style="{{ playIconStyle }}" aria-label="Play shop walkthrough">
-              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(52,143,0)"><path d="M8 5v14l11-7z"></path></svg>
+              <svg width="{{ playIconSvgSize }}" height="{{ playIconSvgSize }}" viewBox="0 0 24 24" fill="rgb(44,132,0)"><path d="M8 5v14l11-7z"></path></svg>
             </div>
             <span style="{{ videoLabelStyle }}">SHOP WALKTHROUGH</span>
             <span style="{{ videoSubLabelStyle }}">Click to play — streams from Google Drive.</span>
@@ -198,7 +198,7 @@ class Component extends DCLogic {
     const ls = "var(--ls-tight)";
     const lh = "var(--lh-tight)";
     const lsWide = "var(--ls-wide)";
-    const accentLine = "rgba(52,143,0,0.35)";
+    const accentLine = "rgba(44,132,0,0.35)";
     const paperA = (a) => "rgba(253,253,250," + a + ")";
 
     return {
