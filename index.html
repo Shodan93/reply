@@ -31,10 +31,10 @@
         <div style="position:absolute;left:37.5px;top:52px;width:5px;height:5px;border-radius:50%;background:rgb(90,97,103)"></div>
       </sc-if>
       <div style="{{ heroContentStyle }}">
-        <span style="{{ eyebrowStyle }}">SELECTED WORK</span>
-        <h1 style="{{ h1Style }}">Brand is the mission.</h1>
-        <p style="{{ subtitle1Style }}">Svenja Mumelter · Application for Brand Specialist, Isar Aerospace</p>
-        <p style="{{ subtitle2Style }}">A selection of projects across visual communication, content and integrated marketing.</p>
+        <span style="{{ eyebrowStyle }}">SELECTED WORK · MARKETING AUTOMATION</span>
+        <h1 style="{{ h1Style }}">From customer journeys to intelligent automation.</h1>
+        <p style="{{ subtitle1Style }}">Svenja Mumelter · Application for (Junior) Consultant Marketing Automation – Microsoft Dynamics 365 at Reply</p>
+        <p style="{{ subtitle2Style }}">Selected work demonstrating e-commerce practice, customer journey thinking, structured implementation and AI-assisted workflows.</p>
       </div>
     </div>
 
@@ -228,7 +228,7 @@ class Component extends DCLogic {
         letterSpacing: "0.14em",
         lineHeight: 1.2,
         color: accent,
-        whiteSpace: "nowrap",
+        whiteSpace: m ? "normal" : "nowrap",
         margin: 0,
       },
       h1Style: {
@@ -238,6 +238,7 @@ class Component extends DCLogic {
         lineHeight: 1.04,
         color: strong,
         margin: 0,
+        maxWidth: m ? "100%" : 900,
       },
       subtitle1Style: {
         fontFamily: archivo, fontWeight: 600,
@@ -252,8 +253,8 @@ class Component extends DCLogic {
         lineHeight: 1.55,
         color: muted,
         margin: 0,
-        maxWidth: m ? "100%" : "none",
-        whiteSpace: m ? "normal" : "nowrap",
+        maxWidth: m ? "100%" : 760,
+        whiteSpace: "normal",
       },
 
       case1Style: {
